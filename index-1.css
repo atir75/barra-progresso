@@ -1,0 +1,42 @@
+:root{ /*variavel do css*/
+    --counter:0;
+    --bar-color: blue;
+  }
+  
+  
+  .container-barra{
+    width: 400px; /*largura*/
+    height: 20px; /*altura*/
+    border: solid 2px #222;
+  }
+  .barra{
+    height: 100%;
+    background-color: var(--bar-color);
+    animation-name: barra; /*propriedade animation tem 2 nomes obrigatórios, name e duration*/
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  .barra::after{
+    content: var(--counter);
+    font-size:20px;
+    display: block;
+    text-align: right;
+    color: #fff;
+  }
+  @keyframes barra{ /*como o elemento barra deve se renderizar*/
+    0%{
+      width:0;
+      --counter:"0";
+    }
+    
+    50%{
+      width:50%;
+      --counter: "50%";
+    }
+    
+    100%{ 
+      width: 100%;
+      --counter:"100%";
+    }
+    
+  }
